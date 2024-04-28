@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const file = defineModel('file')
 
 function hasImage(data: DataTransfer | null): boolean {
   const items = data?.items ?? []
@@ -26,8 +27,7 @@ function onDrop(event: DragEvent) {
   }
   event.preventDefault()
   const item = data!.items[0]
-  const file = item.getAsFile()
-  console.log(file)
+  file.value = item.getAsFile()
 }
 </script>
 
