@@ -24,14 +24,8 @@ watch(props, async (next, _) => {
 </script>
 
 <template>
-  <div>
-    <canvas id="canvas"></canvas>
-  </div>
+  <canvas id="canvas" width="0" height="0"></canvas>
 </template>
 
 <style scoped>
-img {
-  width: 80vw;
-  padding: 64px;
-}
 </style>

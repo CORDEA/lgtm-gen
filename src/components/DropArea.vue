@@ -11,7 +11,6 @@ function hasImage(data: DataTransfer | null): boolean {
     return false
   }
   return item.type.startsWith('image');
-
 }
 
 function onDrag(event: DragEvent) {
@@ -32,19 +31,63 @@ function onDrop(event: DragEvent) {
 </script>
 
 <template>
-  <div class="card" @dragover="onDrag" @drop="onDrop">
+  <div class="card" @dragover="onDrag" @drop="onDrop" v-if="!file">
     <p>Drop the image</p>
+  </div>
+  <div class="mini-card" @dragover="onDrag" @drop="onDrop" v-else>
+    <p>Or drop the image</p>
   </div>
 </template>
 
 <style scoped>
-
 .card {
+  display: flex;
   width: 80vw;
+  height: 20vh;
   padding: 64px;
-  background: #ffffffa0;
-  border-radius: 24px;
-  border: #ffffff dashed 1px;
+  border: 5px solid;
+  border-image: linear-gradient(
+      0deg,
+      #ffffff 20%,
+      transparent 20% 80%,
+      #ffffff 80%
+  ) 1;
+  border-image: -webkit-linear-gradient(
+      0deg,
+      #ffffff 20%,
+      transparent 20% 80%,
+      #ffffff 80%
+  ) 1;
 }
 
+.mini-card {
+  display: flex;
+  width: 80vw;
+  padding: 32px;
+  margin: 64px 0;
+  border: 2px solid;
+  border-image: linear-gradient(
+      0deg,
+      #ffffff 20%,
+      transparent 20% 80%,
+      #ffffff 80%
+  ) 1;
+  border-image: -webkit-linear-gradient(
+      0deg,
+      #ffffff 20%,
+      transparent 20% 80%,
+      #ffffff 80%
+  ) 1;
+}
+
+.card > p {
+  margin: auto;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.mini-card > p {
+  margin: auto;
+  font-size: 1em;
+}
 </style>
