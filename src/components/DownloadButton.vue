@@ -34,11 +34,22 @@ button {
   font-weight: 300;
   cursor: pointer;
   padding: 16px 32px;
-  border: 1px solid #ffffff;
+  border: 1px solid #fafafa;
   background-color: transparent;
 }
 
 button:hover {
-  background-color: #ffffffa0;
+  background-color: #fafafa33;
 }
+
+@media (prefers-color-scheme: light) {
+  button {
+    border-color: #212121;
+  }
+
+  button:hover {
+    background-color: #21212133;
+  }
+}
+
 </style>

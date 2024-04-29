@@ -48,15 +48,15 @@ function onDrop(event: DragEvent) {
   border: 5px solid;
   border-image: linear-gradient(
       0deg,
-      #ffffff 20%,
+      #fafafa 20%,
       transparent 20% 80%,
-      #ffffff 80%
+      #fafafa 80%
   ) 1;
   border-image: -webkit-linear-gradient(
       0deg,
-      #ffffff 20%,
+      #fafafa 20%,
       transparent 20% 80%,
-      #ffffff 80%
+      #fafafa 80%
   ) 1;
 }
 
@@ -68,15 +68,15 @@ function onDrop(event: DragEvent) {
   border: 2px solid;
   border-image: linear-gradient(
       0deg,
-      #ffffff 20%,
+      #fafafa 20%,
       transparent 20% 80%,
-      #ffffff 80%
+      #fafafa 80%
   ) 1;
   border-image: -webkit-linear-gradient(
       0deg,
-      #ffffff 20%,
+      #fafafa 20%,
       transparent 20% 80%,
-      #ffffff 80%
+      #fafafa 80%
   ) 1;
 }
 
@@ -89,5 +89,37 @@ function onDrop(event: DragEvent) {
 .mini-card > p {
   margin: auto;
   font-size: 1em;
+}
+
+@media (prefers-color-scheme: light) {
+  .card {
+    border-image: linear-gradient(
+        0deg,
+        #212121 20%,
+        transparent 20% 80%,
+        #212121 80%
+    ) 1;
+    border-image: -webkit-linear-gradient(
+        0deg,
+        #212121 20%,
+        transparent 20% 80%,
+        #212121 80%
+    ) 1;
+  }
+
+  .mini-card {
+    border-image: linear-gradient(
+        0deg,
+        #212121 20%,
+        transparent 20% 80%,
+        #212121 80%
+    ) 1;
+    border-image: -webkit-linear-gradient(
+        0deg,
+        #212121 20%,
+        transparent 20% 80%,
+        #212121 80%
+    ) 1;
+  }
 }
 </style>
