@@ -42,7 +42,6 @@ function onDrop(event: DragEvent) {
 <style scoped>
 .card {
   display: flex;
-  width: 80vw;
   height: 20vh;
   padding: 64px;
   border: 5px solid;
@@ -62,7 +61,6 @@ function onDrop(event: DragEvent) {
 
 .mini-card {
   display: flex;
-  width: 80vw;
   padding: 32px;
   margin: 64px 0;
   border: 2px solid;

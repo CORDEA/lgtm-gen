@@ -13,10 +13,14 @@ watch(props, async (next, _) => {
       .getPropertyValue('font-family')
   const reader = new FileReader();
   const img = new Image();
+  const width = parseFloat(
+      getComputedStyle(canvas, null).getPropertyValue('width')
+  )
   img.onload = () => {
-    canvas.width = img.width
-    canvas.height = img.height
-    ctx.drawImage(img, 0, 0)
+    const ar = img.height / img.width
+    canvas.width = width
+    canvas.height = width * ar
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
     ctx.font = `${props.size}px ${font}`
     ctx.fillStyle = props.color
     ctx.textAlign = 'center'
@@ -35,4 +39,7 @@ watch(props, async (next, _) => {
 </template>
 
 <style scoped>
+#canvas {
+  width: 60vw;
+}
 </style>
