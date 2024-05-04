@@ -12,6 +12,7 @@ const size = ref<number | null>(40)
 </script>
 
 <template>
+  <h1>LGTM Generator</h1>
   <Preview :file="file" :text="text" :color="color" :size="size"/>
   <DropArea v-model:file="file"/>
   <Option v-if="file" v-model:text="text" v-model:color="color" v-model:size="size"/>
@@ -19,4 +20,7 @@ const size = ref<number | null>(40)
 </template>
 
 <style scoped>
+h1 {
+  margin-bottom: 64px;
+}
 </style>
