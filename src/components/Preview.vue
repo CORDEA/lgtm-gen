@@ -15,6 +15,11 @@ watch(props, async (next, _) => {
     canvas.width = img.width
     canvas.height = img.height
     ctx.drawImage(img, 0, 0)
+    ctx.font = '50px sans-serif'
+    ctx.fillStyle = '#000'
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText('LGTM', canvas.width / 2, canvas.height / 2, canvas.width)
   }
   reader.onload = (e) => {
     img.src = e.target?.result as string
