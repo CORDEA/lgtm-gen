@@ -1,23 +1,21 @@
 <script setup lang="ts">
 function onClick(_: MouseEvent) {
-  const canvas = document.getElementById('canvas') as HTMLCanvasElement
+  const canvas = document.getElementById("canvas") as HTMLCanvasElement;
   canvas.toBlob((blob) => {
     if (!blob) {
-      return
+      return;
     }
-    const a = document.createElement('a')
-    a.download = 'lgtm.png'
-    a.href = URL.createObjectURL(blob)
-    a.click()
-  })
+    const a = document.createElement("a");
+    a.download = "lgtm.png";
+    a.href = URL.createObjectURL(blob);
+    a.click();
+  });
 }
 </script>
 
 <template>
   <div class="card">
-    <button @click="onClick" type="button" id="button">
-      Export
-    </button>
+    <button @click="onClick" type="button" id="button">Export</button>
   </div>
 </template>
 
@@ -51,5 +49,4 @@ button:hover {
     background-color: #21212133;
   }
 }
-
 </style>

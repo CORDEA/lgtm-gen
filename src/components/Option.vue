@@ -1,14 +1,14 @@
 <script setup lang="ts">
-const text = defineModel('text')
-const color = defineModel('color')
-const size = defineModel('size')
+const text = defineModel("text");
+const color = defineModel("color");
+const size = defineModel("size");
 </script>
 
 <template>
-  <div class='card'>
-    <input type='text' id='text' placeholder="Text" v-model="text"/>
-    <input type='color' id='color' v-model="color"/>
-    <input type='range' id='size' v-model="size"/>
+  <div class="card">
+    <input type="text" id="text" placeholder="Text" v-model="text" />
+    <input type="color" id="color" v-model="color" />
+    <input type="range" id="size" v-model="size" />
   </div>
 </template>
 

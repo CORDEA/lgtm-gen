@@ -1,32 +1,32 @@
 <script setup lang="ts">
-const file = defineModel('file')
+const file = defineModel("file");
 
 function hasImage(data: DataTransfer | null): boolean {
-  const items = data?.items ?? []
+  const items = data?.items ?? [];
   if (items.length <= 0) {
-    return false
+    return false;
   }
-  const item = items[0]
-  if (item.kind !== 'file') {
-    return false
+  const item = items[0];
+  if (item.kind !== "file") {
+    return false;
   }
-  return item.type.startsWith('image');
+  return item.type.startsWith("image");
 }
 
 function onDrag(event: DragEvent) {
   if (hasImage(event.dataTransfer)) {
-    event.preventDefault()
+    event.preventDefault();
   }
 }
 
 function onDrop(event: DragEvent) {
-  const data = event.dataTransfer
+  const data = event.dataTransfer;
   if (!hasImage(data)) {
-    return
+    return;
   }
-  event.preventDefault()
-  const item = data!.items[0]
-  file.value = item.getAsFile()
+  event.preventDefault();
+  const item = data!.items[0];
+  file.value = item.getAsFile();
 }
 </script>
 
@@ -50,13 +50,15 @@ function onDrop(event: DragEvent) {
       #fafafa 20%,
       transparent 20% 80%,
       #fafafa 80%
-  ) 1;
+    )
+    1;
   border-image: -webkit-linear-gradient(
       0deg,
       #fafafa 20%,
       transparent 20% 80%,
       #fafafa 80%
-  ) 1;
+    )
+    1;
 }
 
 .mini-card {
@@ -69,13 +71,15 @@ function onDrop(event: DragEvent) {
       #fafafa 20%,
       transparent 20% 80%,
       #fafafa 80%
-  ) 1;
+    )
+    1;
   border-image: -webkit-linear-gradient(
       0deg,
       #fafafa 20%,
       transparent 20% 80%,
       #fafafa 80%
-  ) 1;
+    )
+    1;
 }
 
 .card > p {
@@ -96,13 +100,15 @@ function onDrop(event: DragEvent) {
         #212121 20%,
         transparent 20% 80%,
         #212121 80%
-    ) 1;
+      )
+      1;
     border-image: -webkit-linear-gradient(
         0deg,
         #212121 20%,
         transparent 20% 80%,
         #212121 80%
-    ) 1;
+      )
+      1;
   }
 
   .mini-card {
@@ -111,13 +117,15 @@ function onDrop(event: DragEvent) {
         #212121 20%,
         transparent 20% 80%,
         #212121 80%
-    ) 1;
+      )
+      1;
     border-image: -webkit-linear-gradient(
         0deg,
         #212121 20%,
         transparent 20% 80%,
         #212121 80%
-    ) 1;
+      )
+      1;
   }
 }
 </style>
